@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="poopColor">
+        <item>Green</item>
+        <item>Light Brown</item>
+        <item>Yellow</item>
+        <item>Black</item>
+        <item>Red</item>
+        <item>Dark Brown</item>
+    </string-array>
+    android:textSize="24sp"
+</resources>
