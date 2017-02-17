@@ -22,8 +22,11 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 import static android.R.id.progress;
 import static com.example.ricoj.poopapp.R.id.numOfWipes;
@@ -54,7 +57,7 @@ public class NewPoop extends AppCompatActivity {
 
     //date and time things
     Calendar calendar;
-    SimpleDateFormat simpleDateFormat;
+    DateFormat simpleDateFormat = DateFormat.getDateInstance();
     String date;
 
     //firebase things
@@ -70,7 +73,7 @@ public class NewPoop extends AppCompatActivity {
 
         //instantiating date and time
         calendar = Calendar.getInstance();
-        simpleDateFormat = new SimpleDateFormat("MM-dd-yyyy HH:mm:ss");
+        DateFormat simpleDateFormat = DateFormat.getDateTimeInstance();
         date = simpleDateFormat.format(calendar.getTime());
 
         type = (Spinner) findViewById(R.id.spinnerType);

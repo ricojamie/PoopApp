@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main2"
     android:layout_width="match_parent"
@@ -13,22 +14,33 @@
         android:orientation="vertical"
         android:layout_weight="1">
 
+        <android.support.v4.widget.SwipeRefreshLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/swipeContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
         <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/newPoopButton"
         android:layout_centerHorizontal="true"
         android:id="@+id/listOfPoops"
-            android:layout_margin="5dp" />
+            android:layout_margin="5dp"/>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
 
     </LinearLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
         android:layout_weight="9"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <Button
             android:text="Log out"
@@ -37,24 +49,22 @@
             android:id="@+id/button.logout"
             android:onClick="logout"
             android:layout_margin="5dp"
-            android:elevation="1dp" />
+            android:elevation="3dp" />
 
-        <Button
-            android:text="Load past poops"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/button2"
-            android:layout_margin="5dp"
-            android:onClick="loadPoopList"/>
-
-        <Button
-        android:text="New Poop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/newPoopButton"
-            android:layout_margin="5dp" />
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:clickable="true"
+            app:fabSize="mini"
+            app:srcCompat="@drawable/poop_emoji"
+            android:id="@+id/newPoopButton"
+            app:elevation="5dp"
+            android:layout_alignTop="@+id/button.logout"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="5dp"/>
 
 
-    </LinearLayout>
+    </RelativeLayout>
 
 </LinearLayout>
